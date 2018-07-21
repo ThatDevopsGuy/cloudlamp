@@ -1,3 +1,10 @@
+
+# CloudLAMP Terraform Files
+# Copyright 2018, Google LLC
+# Fernando Sanchez <fersanchez@google.com>
+# Sebastian Weigand <tdg@google.com>
+
+
 # CloudLAMP Terraform Variables
 
 # These are populated from your gcloud config, from preflight.sh:

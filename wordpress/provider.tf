@@ -1,3 +1,10 @@
+
+# CloudLAMP Terraform Files
+# Copyright 2018, Google LLC
+# Fernando Sanchez <fersanchez@google.com>
+# Sebastian Weigand <tdg@google.com>
+
+
 provider "google" {
   region  = "${var.gcp_region}"
   project = "${var.gcp_project}"
