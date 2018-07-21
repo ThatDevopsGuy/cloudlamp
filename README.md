@@ -21,6 +21,10 @@ Following on the design principles/goals stated above, below are the implementat
 | Database backend | Google Cloud SQL | MySQL 5.6
 | Storage backend (NFS option) | NFS | NFS on GCE VM
 
+#### Drupal
+| Component | Implementation detail | Current version |
+| ------ | ------ | ------ |
+| Frontend + App  | Drupal docker container | Bitnami v8.3.7r0
 
 ### Wordpress
 | Component | Implementation detail | Current version |
