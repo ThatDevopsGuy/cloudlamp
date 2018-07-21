@@ -1,6 +1,6 @@
 # Cloud LAMP
 
-<img src="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/apple-icon.png" width="96"> <img src="https://www.silhouette-illust.com/wp-content/uploads/2016/06/3423-300x300.jpg" width="96">
+<img src="https://storage.googleapis.com/cloudlamp-assets/cloudlamp.jpg" width="500">
 
 This project aims to provide a modern cloud-based implementation of the [LAMP](https://en.wikipedia.org/wiki/LAMP) stack (Linux, Apache, MySQL and PHP). In particular, it implements the following improvements over a traditional monolithic LAMP deployment:
 
