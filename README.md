@@ -21,6 +21,10 @@ Following on the design principles/goals stated above, below are the implementat
 | Database backend | Google Cloud SQL | MySQL 5.6
 | Storage backend (NFS option) | NFS | NFS on GCE VM
 
+### Drupal
+| Component | Implementation detail | Current version |
+| ------ | ------ | ------ |
+| Frontend + App  | Drupal docker container | Bitnami v8.3.7r0
 
 ### Wordpress
 | Component | Implementation detail | Current version |
@@ -42,7 +46,7 @@ You can enable billing on your project in the Google Cloud console following [th
 #### Clone the repo, configure and deploy
 Clone the deployment:
 ```sh
-git clone http://github.com/fernandosanchezmunoz/cloudlamp
+git clone http://gitlab.com/cloudlamp/cloudlamp
 ```
 Change directory to the desired version, for example:
 ```sh

@@ -1,4 +1,0 @@
-.terraform/
-errored.tfstate
-backend.tf
-terraform.tfvars
