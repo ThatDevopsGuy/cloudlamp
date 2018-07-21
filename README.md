@@ -46,7 +46,7 @@ You can enable billing on your project in the Google Cloud console following [th
 #### Clone the repo, configure and deploy
 Clone the deployment:
 ```sh
-git clone http://github.com/fernandosanchezmunoz/cloudlamp
+git clone http://gitlab.com/cloudlamp/cloudlamp
 ```
 Change directory to the desired version, for example:
 ```sh
