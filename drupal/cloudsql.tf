@@ -1,9 +1,7 @@
-
 # CloudLAMP Terraform Files
 # Copyright 2018, Google LLC
 # Fernando Sanchez <fersanchez@google.com>
 # Sebastian Weigand <tdg@google.com>
-
 
 resource "google_sql_database_instance" "master" {
   name             = "${var.cloudsql_instance}"

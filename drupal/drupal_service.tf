@@ -1,9 +1,7 @@
-
 # CloudLAMP Terraform Files
 # Copyright 2018, Google LLC
 # Fernando Sanchez <fersanchez@google.com>
 # Sebastian Weigand <tdg@google.com>
-
 
 resource "kubernetes_replication_controller" "cloud-drupal" {
   metadata {
@@ -43,12 +41,32 @@ resource "kubernetes_replication_controller" "cloud-drupal" {
       }
 
       container {
-        image = "${var.gke_wordpress_image}"
-        name  = "wordpress"
+        image = "${var.gke_drupal_image}"
+        name  = "drupal"
 
         env = [
           {
-            name = "WORDPRESS_DB_PASSWORD"
+            name  = "MARIADB_HOST"
+            value = "127.0.0.1"
+          },
+          {
+            name  = "MARIADB_PORT_NUMBER"
+            value = "3306"
+          },
+          {
+            name  = "DRUPAL_USERNAME"
+            value = "${var.drupal_username}"
+          },
+          {
+            name  = "DRUPAL_PASSWORD"
+            value = "${var.drupal_password}"
+          },
+          {
+            name  = "DRUPAL_EMAIL"
+            value = "${var.drupal_email}"
+          },
+          {
+            name = "MARIADB_PASSWORD"
 
             value_from = {
               secret_key_ref = {
@@ -58,7 +76,7 @@ resource "kubernetes_replication_controller" "cloud-drupal" {
             }
           },
           {
-            name = "WORDPRESS_DB_USER"
+            name = "MARIADB_USER"
 
             value_from = {
               secret_key_ref = {
@@ -67,15 +85,11 @@ resource "kubernetes_replication_controller" "cloud-drupal" {
               }
             }
           },
-          {
-            name  = "WORDPRESS_DB_HOST"
-            value = "127.0.0.1:3306"
-          },
         ]
 
         volume_mount {
           name       = "${var.vol_1}"
-          mount_path = "/var/www/html"
+          mount_path = "/bitnami/"
         }
       }
 
@@ -99,7 +113,7 @@ resource "kubernetes_replication_controller" "cloud-drupal" {
   }
 }
 
-resource "kubernetes_service" "cloud-wordpress" {
+resource "kubernetes_service" "cloud-drupal" {
   metadata {
     name = "${var.gke_service_name}"
   }
@@ -124,5 +138,5 @@ resource "kubernetes_service" "cloud-wordpress" {
 }
 
 output "lb_ip" {
-  value = "${kubernetes_service.cloud-wordpress.load_balancer_ingress.0.ip}"
+  value = "${kubernetes_service.cloud-drupal.load_balancer_ingress.0.ip}"
 }

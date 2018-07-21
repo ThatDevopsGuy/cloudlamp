@@ -1,9 +1,7 @@
-
 # CloudLAMP Terraform Files
 # Copyright 2018, Google LLC
 # Fernando Sanchez <fersanchez@google.com>
 # Sebastian Weigand <tdg@google.com>
-
 
 resource "google_container_cluster" "primary" {
   name = "${var.gke_cluster_name}"

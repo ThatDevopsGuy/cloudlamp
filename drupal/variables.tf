@@ -1,11 +1,7 @@
-
-# CloudLAMP Terraform Files
-# Copyright 2018, Google LLC
-# Fernando Sanchez <fersanchez@google.com>
-# Sebastian Weigand <tdg@google.com>
-
-
 # CloudLAMP Terraform Variables
+# Copyright 2018, Google LLC
+# Sebastian Weigand <tdg@google.com>
+# Fernando Sanchez <fersanchez@google.com>
 
 # These are populated from your gcloud config, from preflight.sh:
 
@@ -47,7 +43,7 @@ variable "nfs_raw_disk_type" {
 }
 
 variable "vol_1" {
-  default = "wordpress-vol"
+  default = "drupal-vol"
 }
 
 variable "vol_1_size" {
@@ -123,21 +119,33 @@ variable "gke_username" {
 }
 
 # =============================================================================
-# Wordpress
+# Drupal
 # =============================================================================
 
 variable "gke_service_name" {
-  default = "cloudlamp-wordpress-service"
+  default = "cloudlamp-drupal-service"
 }
 
 variable "gke_app_name" {
-  default = "cloudlamp-wordpress-app"
+  default = "cloudlamp-drupal-app"
 }
 
-variable "gke_wordpress_image" {
-  default = "wordpress:latest"
+variable "gke_drupal_image" {
+  default = "bitnami/drupal:8.3.7-r0"
 }
 
 variable "gke_cloudsql_image" {
   default = "gcr.io/cloudsql-docker/gce-proxy:latest"
+}
+
+variable "drupal_username" {
+  default = "drupaluser"
+}
+
+variable "drupal_password" {
+  default = "drupalpassword"
+}
+
+variable "drupal_email" {
+  default = "drupal@example.com"
 }

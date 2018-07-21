@@ -1,9 +1,7 @@
-
 # CloudLAMP Terraform Files
 # Copyright 2018, Google LLC
 # Fernando Sanchez <fersanchez@google.com>
 # Sebastian Weigand <tdg@google.com>
-
 
 resource "google_service_account" "cloudsql-sa" {
   account_id   = "${var.cloudsql_service_account_name}"
